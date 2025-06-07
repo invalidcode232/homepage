@@ -20,7 +20,7 @@ export default function Home() {
         className="mb-4 leading-6 lg:max-w-[75%]"
         aria-label="introduction"
       >
-        <p className="mb-2">
+        <p className="mb-4 md:mb-6">
           I am currently a first year undergraduate student studying Computer
           Science at
           <a
@@ -33,12 +33,12 @@ export default function Home() {
           .
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 md:mb-6">
           I am interested in all things software development, including machine
           learning, artificial intelligence, and web development.
         </p>
 
-        <p>
+        <p className="mb-4 md:mb-6">
           Want to know more about me? Check out my{" "}
           <Link
             href="/terminal"
@@ -50,12 +50,15 @@ export default function Home() {
         </p>
       </section>
 
-      <section aria-label="action buttons" className="flex items-center">
+      <section
+        aria-label="action buttons"
+        className="md:flex md:items-center mb-0 md:mb-4"
+      >
         <ActionButton href="/#">
           <DownloadIcon className="mr-2 inline-block" />
           Download CV
         </ActionButton>
-        <span className="mx-3 text-gray-400">or</span>
+        <span className="text-gray-500 md:mx-4 md:block hidden">or</span>
         <ActionButton href="/#">
           <MailIcon className="mr-2 inline-block" />
           Email Me

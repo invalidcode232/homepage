@@ -16,9 +16,9 @@ export default function ActionButton(props: Props) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="inline-block"
+      className="block md:inline-block"
     >
-      <Button className="min-w-60 px-8 py-5 bg-slate-600 text-white hover:bg-slate-700 hover:cursor-pointer">
+      <Button className="w-full mb-2 md:min-w-60 px-8 py-5 bg-slate-600 text-white hover:bg-slate-700 hover:cursor-pointer">
         <Link
           className="font-semibold flex items-center justify-center"
           href={props.href}
