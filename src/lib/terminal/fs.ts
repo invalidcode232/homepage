@@ -1,5 +1,3 @@
-// import timeblockrContent from "../include/terminal-files/project-timeblockr.md?raw";
-
 interface TFile {
     name: string;
     content: string;
@@ -7,11 +5,6 @@ interface TFile {
 }
 
 const TFileSystem: TFile[] = [
-    // {
-    //     name: "timeblockr.md",
-    //     content: timeblockrContent,
-    //     description: "A time tracking app for the terminal",
-    // }
 ]
 
 export default TFileSystem;
