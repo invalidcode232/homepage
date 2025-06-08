@@ -22,6 +22,9 @@
   to = "/index.html"
   status = 200 # This makes it a "rewrite" - the URL in the browser doesn't change.
 
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
 # You can also add custom headers here if needed
 # [[headers]]
 #   for = "/*"
