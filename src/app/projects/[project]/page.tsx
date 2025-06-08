@@ -24,18 +24,19 @@ export default function ProjectPage() {
   }, [project, fetchProject]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div>
       {projectContent ? (
-        <div className="prose prose-invert">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="prose prose-invert"
+        >
           <Markdown>{projectContent}</Markdown>
-        </div>
+        </motion.div>
       ) : (
         <ProjectTextSkeleton />
       )}
-    </motion.div>
+    </div>
   );
 }
