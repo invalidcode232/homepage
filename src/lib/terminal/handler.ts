@@ -38,7 +38,7 @@ class TerminalHandler {
         this.addOutput(null, SYSTEM_MESSAGE);
     }
 
-    handleCommand(input: string) {
+    async handleCommand(input: string) {
         const [command, ...args] = input.trim().split(" ");
 
         switch (command) {
@@ -63,16 +63,17 @@ class TerminalHandler {
                 this.addOutput(input, SYSTEM_MESSAGE);
                 break;
             case Commands.LS:
+                const fileList = await TFileSystem.getFileList();
                 this.addOutput(
                     input,
-                    TFileSystem.map((file) => file.name).join("\n"),
+                    fileList.join("\n"),
                 );
 
                 break;
             case Commands.CAT:
-                const file = TFileSystem.find((file) => file.name === args[0]);
-                if (file) {
-                    this.addOutput(input, file.content);
+                const fileContent = await TFileSystem.getFileContent(args[0]);
+                if (fileContent) {
+                    this.addOutput(input, fileContent);
                 } else {
                     this.addOutput(input, `File not found: ${args[0]}`);
                 }
