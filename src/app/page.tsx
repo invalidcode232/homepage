@@ -77,7 +77,7 @@ export default function Home() {
           Science at
           <motion.a
             href={"https://hku.hk"}
-            className="text-blue-400 no-underline hover:underline ml-1"
+            className="text-blue-300 no-underline hover:underline ml-1 hover:text-blue-400"
             target="_blank"
             whileHover={{
               scale: 1.05,
@@ -110,7 +110,7 @@ export default function Home() {
           <motion.span whileHover={{ scale: 1.05 }} className="inline-block">
             <Link
               href="/terminal"
-              className="text-blue-400 hover:underline no-underline"
+              className="text-blue-300 hover:underline no-underline hover:text-blue-400"
             >
               Check it out here
             </Link>
