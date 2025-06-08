@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TFileSystem from "@/lib/terminal/fs";
+import TFileSystem from "@/lib/fs";
 import { ProjectGrid, LoadingSpinner } from "@/components/modules/projects";
 
 export default function ProjectsPage() {

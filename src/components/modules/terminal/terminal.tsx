@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useRef, useState, useEffect } from "react";
-import { OutputHistory } from "../../../lib/terminal/objects";
-import TerminalHandler from "../../../lib/terminal/handler";
+import { OutputHistory } from "../../../lib/objects";
+import TerminalHandler from "../../../lib/handler";
 
 export default function Terminal() {
   const PROMPT = "guest@portfolio:~$";
