@@ -1,6 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function ProjectSkeleton() {
+export default function ProjectTextSkeleton() {
   return (
     <div className="flex flex-col gap-4">
       {Array.from({ length: 10 }).map((_, index) => (
