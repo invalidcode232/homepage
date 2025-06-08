@@ -2,10 +2,16 @@ import { NextResponse } from "next/server";
 import path from "path";
 
 export async function GET(request: Request) {
-    const body = await request.json();
-    const projectName = body.projectName;
+    const url = new URL(request.url);
+    const projectName = url.searchParams.get("projectName");
 
-    const filePath = path.join(process.cwd(), "include/projects", `${projectName}.md`);
+    if (!projectName) {
+        return NextResponse.json({
+            error: "Project name is required",
+        }, { status: 400 });
+    }
+
+    const filePath = path.join(process.cwd(), "include/projects", `${projectName}`);
     const file = Bun.file(filePath);
     if (!await file.exists()) {
         return NextResponse.json({
