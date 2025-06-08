@@ -73,7 +73,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.3 }}
         >
-          I am currently a first year undergraduate student studying Computer
+          I am currently a second year undergraduate student studying Computer
           Science at
           <motion.a
             href={"https://hku.hk"}
@@ -106,13 +106,13 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.3 }}
         >
-          Want to know more about me? Check out my{" "}
+          I made a terminal-esque interface to access my portfolio.{" "}
           <motion.span whileHover={{ scale: 1.05 }} className="inline-block">
             <Link
               href="/terminal"
               className="text-blue-400 hover:underline no-underline"
             >
-              interactive terminal
+              Check it out here
             </Link>
           </motion.span>
           .
