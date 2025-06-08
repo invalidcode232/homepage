@@ -1,0 +1,31 @@
+# netlify.toml
+
+# Base build settings
+[build]
+  # This is the command Netlify will run to build your site.
+  # If you use yarn: "yarn build"
+  # If you use Vite: "vite build" or "npm run build" (if your package.json script is named 'build')
+  command = "bun run build"
+
+  # This is the directory that contains the built static files (HTML, CSS, JS).
+  # For Create React App, this is usually 'build'.
+  # For Vite, this is usually 'dist'.
+  publish = "dist" # Or "dist" if using Vite
+
+# Redirects and Rewrites
+[[redirects]]
+  # This is the crucial part for Single Page Applications (SPAs) like React.
+  # It ensures that any request not matching an actual file in your 'publish' directory
+  # (like /about, /projects, etc., that React Router handles)
+  # is redirected to your main index.html file.
+  from = "/*"
+  to = "/index.html"
+  status = 200 # This makes it a "rewrite" - the URL in the browser doesn't change.
+
+# You can also add custom headers here if needed
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     X-Frame-Options = "DENY"
+#     X-XSS-Protection = "1; mode=block"
+#     Content-Security-Policy = "..."
