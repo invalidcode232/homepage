@@ -81,7 +81,6 @@ export default function Home() {
             target="_blank"
             whileHover={{
               scale: 1.05,
-              color: "#60a5fa",
               transition: { duration: 0.2 },
             }}
           >
