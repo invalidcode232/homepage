@@ -8,6 +8,7 @@ type Props = {
   href: string;
   // text: string;
   children: React.ReactNode;
+  // isExternal?: boolean;
 };
 
 export default function ActionButton(props: Props) {
@@ -37,6 +38,7 @@ export default function ActionButton(props: Props) {
           <Link
             className="font-semibold flex items-center justify-center"
             href={props.href}
+            // {...(props.isExternal && { target: "_blank" })}
           >
             <motion.div
               className="flex items-center justify-center"

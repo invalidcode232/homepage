@@ -130,7 +130,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.3 }}
         >
-          <ActionButton href="/#">
+          <ActionButton href="https://github.com/invalidcode232/invalidcode232.github.io/raw/refs/heads/main/public/cv.pdf">
             <DownloadIcon className="mr-2 inline-block" />
             Download CV
           </ActionButton>
@@ -150,7 +150,7 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.25, duration: 0.3 }}
         >
-          <ActionButton href="/#">
+          <ActionButton href="mailto:james.sungarda@gmail.com">
             <MailIcon className="mr-2 inline-block" />
             Email Me
           </ActionButton>
