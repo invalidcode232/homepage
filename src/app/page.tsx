@@ -1,26 +1,21 @@
 "use client";
 import Link from "next/link";
-import ActionButton from "@/components/modules/hero/action-button";
+import ActionButton from "@/components/modules/home/action-button";
 import { DownloadIcon, MailIcon } from "lucide-react";
-import ContactsList from "@/components/modules/hero/contacts-list";
+import ContactsList from "@/components/modules/home/contacts-list";
 
 export default function Home() {
   return (
     <>
       <section className="mb-2" aria-label="greeting">
-        <h1 className="text-3xl font-semibold inline-block mr-3 text-white">
-          Hello!
-        </h1>
+        <h1 className="text-3xl font-semibold inline-block mr-3">Hello!</h1>
         <h2 className="text-md mb-2 text-gray-400 inline-block">
           Halo / 你好 / こんにちは
         </h2>
       </section>
 
-      <section
-        className="mb-4 leading-6 lg:max-w-[75%]"
-        aria-label="introduction"
-      >
-        <p className="mb-4 md:mb-6">
+      <section className="mb-4 lg:max-w-[75%]" aria-label="introduction">
+        <p className="mb-4 md:mb-5">
           I am currently a first year undergraduate student studying Computer
           Science at
           <a
@@ -33,12 +28,12 @@ export default function Home() {
           .
         </p>
 
-        <p className="mb-4 md:mb-6">
+        <p className="mb-4 md:mb-5">
           I am interested in all things software development, including machine
           learning, artificial intelligence, and web development.
         </p>
 
-        <p className="mb-4 md:mb-6">
+        <p className="mb-4 md:mb-5">
           Want to know more about me? Check out my{" "}
           <Link
             href="/terminal"
@@ -52,7 +47,7 @@ export default function Home() {
 
       <section
         aria-label="action buttons"
-        className="md:flex md:items-center mb-0 md:mb-4"
+        className="md:flex md:items-center mb-4"
       >
         <ActionButton href="/#">
           <DownloadIcon className="mr-2 inline-block" />
@@ -66,6 +61,7 @@ export default function Home() {
       </section>
 
       <section aria-label="contacts">
+        <h2 className="text-2xl font-semibold mb-2">Contact Me</h2>
         <ContactsList />
       </section>
     </>
