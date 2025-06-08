@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TFileSystem from "@/lib/fs";
-import { ProjectGrid, LoadingSpinner } from "@/components/modules/projects";
+import { ProjectGrid, ProjectSkeleton } from "@/components/modules/projects";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<string[]>([]);
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
   };
 
   if (loading) {
-    return <LoadingSpinner />;
+    return <ProjectSkeleton />;
   }
 
   if (error) {

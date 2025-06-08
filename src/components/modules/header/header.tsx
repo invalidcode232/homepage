@@ -6,8 +6,8 @@ import NavLink from "./nav-link";
 import { BookIcon, TerminalIcon } from "lucide-react";
 
 const navLinks = [
-  { href: "/projects", text: "Projects", icon: BookIcon },
   { href: "/terminal", text: "Terminal", icon: TerminalIcon },
+  { href: "/projects", text: "Projects", icon: BookIcon },
 ];
 
 export default function Header() {

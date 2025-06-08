@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import ProjectSkeleton from "@/components/modules/projects/project-skeleton";
 import Markdown from "react-markdown";
+import ProjectTextSkeleton from "@/components/modules/projects/project-text-skeleton";
 
 export default function ProjectPage() {
   const [projectContent, setProjectContent] = useState<string>("");
@@ -34,7 +34,7 @@ export default function ProjectPage() {
           <Markdown>{projectContent}</Markdown>
         </div>
       ) : (
-        <ProjectSkeleton />
+        <ProjectTextSkeleton />
       )}
     </motion.div>
   );
