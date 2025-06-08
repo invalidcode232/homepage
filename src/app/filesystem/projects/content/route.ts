@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import path from "path";
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
     const body = await request.json();
     const projectName = body.projectName;
 
