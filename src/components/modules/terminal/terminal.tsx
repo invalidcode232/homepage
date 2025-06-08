@@ -37,7 +37,9 @@ export default function Terminal() {
     e.preventDefault();
     if (input.trim() === "") return;
 
-    THandler.handleCommand(input);
+    THandler.handleCommand(input).catch((error) => {
+      console.error(error);
+    });
     setInput("");
 
     inputRef.current!.value = "";

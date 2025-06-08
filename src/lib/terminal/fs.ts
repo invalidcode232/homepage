@@ -7,17 +7,25 @@ const FileContentSchema = z.object({
 });
 
 class TFileSystem {
-    static async getFileList(): Promise<string[]> {
+    static async getFileList(): Promise<string[] | null> {
         const response = await fetch("/api/filesystem/projects/list");
         const data = await response.json();
-        
+
+        if (!response.ok) {
+            return null;
+        }
+
         const validatedData = ProjectListSchema.parse(data);
         return validatedData;
     }
 
-    static async getFileContent(fileName: string) {
+    static async getFileContent(fileName: string): Promise<string | null> {
         const response = await fetch(`/api/filesystem/projects/content?projectName=${fileName}`);
         const data = await response.json();
+
+        if (!response.ok) {
+            return null;
+        }
 
         const validatedData = FileContentSchema.parse(data);
         return validatedData.content;

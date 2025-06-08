@@ -64,13 +64,22 @@ class TerminalHandler {
                 break;
             case Commands.LS:
                 const fileList = await TFileSystem.getFileList();
-                this.addOutput(
-                    input,
-                    fileList.join("\n"),
-                );
+                if (fileList) {
+                    this.addOutput(
+                        input,
+                        fileList.join("\n"),
+                    );
+                } else {
+                    this.addOutput(input, "Failed to fetch file list");
+                }
 
                 break;
             case Commands.CAT:
+                if (args.length === 0) {
+                    this.addOutput(input, "Usage: cat <file>");
+                    break;
+                }
+
                 const fileContent = await TFileSystem.getFileContent(args[0]);
                 if (fileContent) {
                     this.addOutput(input, fileContent);
