@@ -109,7 +109,7 @@ export default function ProjectsPage() {
               No Projects Found
             </h2>
             <p className="text-gray-400">
-              Your projects will appear here once they're available.
+              Your projects will appear here once they&apos;re available.
             </p>
           </motion.div>
         </div>

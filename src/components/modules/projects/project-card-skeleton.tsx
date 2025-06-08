@@ -8,7 +8,7 @@ interface ProjectSkeletonCardProps {
 
 function ProjectSkeletonCard({ index }: ProjectSkeletonCardProps) {
   return (
-    <div className="relative group">
+    <div className="relative group" key={index}>
       {/* Main card skeleton */}
       <div className="relative bg-slate-800 border border-slate-700 rounded-lg p-6 overflow-hidden">
         {/* Content skeleton */}

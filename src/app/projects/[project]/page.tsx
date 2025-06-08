@@ -21,7 +21,7 @@ export default function ProjectPage() {
 
   useEffect(() => {
     fetchProject();
-  }, [project]);
+  }, [project, fetchProject]);
 
   return (
     <motion.div
