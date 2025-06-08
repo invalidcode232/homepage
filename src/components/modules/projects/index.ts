@@ -1,3 +1,3 @@
-export { default as ProjectCard } from './ProjectCard';
-export { default as ProjectGrid } from './ProjectGrid';
-export { default as LoadingSpinner } from './LoadingSpinner'; 
+export { default as ProjectCard } from './project-card';
+export { default as ProjectGrid } from './project-grid';
+export { default as LoadingSpinner } from './loading-spinner'; 
