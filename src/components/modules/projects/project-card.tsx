@@ -112,7 +112,7 @@ export default function ProjectCard({
 
           {/* Project name */}
           <motion.h3
-            className="text-lg font-medium text-white mb-2 group-hover:text-blue-300 transition-colors duration-200"
+            className="text-lg font-medium text-white mb-2 transition-colors duration-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: index * 0.05 + 0.3 }}
