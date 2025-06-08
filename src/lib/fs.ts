@@ -8,7 +8,7 @@ const FileContentSchema = z.object({
 
 class TFileSystem {
     static async getFileList(): Promise<string[] | null> {
-        const response = await fetch("/api/filesystem/projects/list");
+        const response = await fetch("/api/projects/list");
         const data = await response.json();
 
         if (!response.ok) {
@@ -20,7 +20,7 @@ class TFileSystem {
     }
 
     static async getFileContent(fileName: string): Promise<string | null> {
-        const response = await fetch(`/api/filesystem/projects/content?projectName=${fileName}`);
+        const response = await fetch(`/api/projects/content?projectName=${fileName}`);
         const data = await response.json();
 
         if (!response.ok) {

@@ -8,6 +8,7 @@ type Props = {
   text: string;
   isExternal?: boolean;
   hideMobile?: boolean;
+  icon?: React.ElementType;
 };
 
 export default function NavigationLink(props: Props) {
@@ -25,11 +26,12 @@ export default function NavigationLink(props: Props) {
       >
         <Link
           href={props.href}
-          className={`text-blue-400 hover:underline mx-2 hover:cursor-pointer transition-colors duration-200 ${
+          className={`flex items-center text-blue-300 mx-2 hover:cursor-pointer transition-colors duration-200 ${
             props.hideMobile ? "hidden lg:inline-block" : ""
           }`}
           {...(props.isExternal && { target: "_blank" })}
         >
+          {props.icon && <props.icon className="mr-1 h-4" />}
           {props.text}
         </Link>
       </motion.div>

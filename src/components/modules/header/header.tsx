@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import NavLink from "./nav-link";
+import { BookIcon, TerminalIcon } from "lucide-react";
 
 const navLinks = [
-  { href: "/terminal", text: "Terminal" },
-  { href: "/projects", text: "Projects" },
+  { href: "/terminal", text: "Terminal", icon: TerminalIcon },
+  { href: "/projects", text: "Projects", icon: BookIcon },
 ];
 
 export default function Header() {
@@ -64,10 +65,17 @@ export default function Header() {
         <Link href="/">James Sungarda</Link>
       </motion.span>
 
-      <motion.nav variants={navVariants} className="space-x-0">
-        {navLinks.map((link) => (
-          <NavLink key={link.href} href={link.href} text={link.text} />
-        ))}
+      <motion.nav variants={navVariants}>
+        <div className="flex">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              text={link.text}
+              icon={link.icon}
+            />
+          ))}
+        </div>
       </motion.nav>
     </motion.header>
   );
