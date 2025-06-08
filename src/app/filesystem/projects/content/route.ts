@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
 import path from "path";
 
 export async function POST(request: Request) {
@@ -7,7 +6,14 @@ export async function POST(request: Request) {
     const projectName = body.projectName;
 
     const filePath = path.join(process.cwd(), "include/projects", `${projectName}.md`);
-    const fileContent = await fs.readFile(filePath, "utf8");
+    const file = Bun.file(filePath);
+    if (!await file.exists()) {
+        return NextResponse.json({
+            error: "File not found",
+        }, { status: 404 });
+    }
+
+    const fileContent = await file.text();
 
     return NextResponse.json({
         content: fileContent,
