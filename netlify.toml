@@ -2,15 +2,8 @@
 
 # Base build settings
 [build]
-  # This is the command Netlify will run to build your site.
-  # If you use yarn: "yarn build"
-  # If you use Vite: "vite build" or "npm run build" (if your package.json script is named 'build')
   command = "bun run build"
-
-  # This is the directory that contains the built static files (HTML, CSS, JS).
-  # For Create React App, this is usually 'build'.
-  # For Vite, this is usually 'dist'.
-  publish = "dist" # Or "dist" if using Vite
+  publish = ".next" # Or "dist" if using Vite
 
 # Redirects and Rewrites
 [[redirects]]
