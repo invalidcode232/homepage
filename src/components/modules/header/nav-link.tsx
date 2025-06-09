@@ -26,7 +26,7 @@ export default function NavigationLink(props: Props) {
       >
         <Link
           href={props.href}
-          className={`flex items-center text-blue-300 mx-2 hover:cursor-pointer transition-colors duration-200 ${
+          className={`flex items-center text-blue-300 hover:text-blue-400 mx-2 hover:cursor-pointer transition-colors duration-200 ${
             props.hideMobile ? "hidden lg:inline-block" : ""
           }`}
           {...(props.isExternal && { target: "_blank" })}
