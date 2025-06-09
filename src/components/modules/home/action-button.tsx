@@ -14,7 +14,7 @@ type Props = {
 export default function ActionButton(props: Props) {
   return (
     <Link
-      className="font-semibold flex items-center justify-center"
+      className="font-semibold items-center justify-center w-full block"
       href={props.href}
       // {...(props.isExternal && { target: "_blank" })}
     >
@@ -31,7 +31,7 @@ export default function ActionButton(props: Props) {
           transition: { duration: 0.15 },
         }}
         whileTap={{ scale: 0.98 }}
-        className="block md:inline-block"
+        // className="block md:inline-block"
       >
         <motion.div
           whileHover={{
