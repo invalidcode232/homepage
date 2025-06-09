@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 type Props = {
   href: string;
@@ -12,6 +13,9 @@ type Props = {
 };
 
 export default function NavigationLink(props: Props) {
+  const pathname = usePathname();
+  const isActive = pathname === props.href;
+
   return (
     <motion.span
       whileHover={{ scale: 1.05 }}
@@ -28,6 +32,10 @@ export default function NavigationLink(props: Props) {
           href={props.href}
           className={`flex items-center text-blue-300 hover:text-blue-400 mx-2 hover:cursor-pointer transition-colors duration-200 ${
             props.hideMobile ? "hidden lg:inline-block" : ""
+          } ${
+            isActive
+              ? "underline underline-offset-4 decoration-blue-300 decoration-2"
+              : ""
           }`}
           {...(props.isExternal && { target: "_blank" })}
         >
