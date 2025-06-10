@@ -1,3 +1,10 @@
+---
+name: Arang
+description: Anki-style spaced repetition learning platform
+skills: ["Node.js", "SQL", "LLM"]
+link: https://github.com/invalidcode232/arang
+---
+
 # Arang
 
 ## An Advanced AI-Powered Spaced Repetition Learning Platform with Intelligent Content Generation

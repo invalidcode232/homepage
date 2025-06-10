@@ -9,43 +9,45 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Link from "next/link";
+// import Link from "next/link";
 import ProjectSkillBox from "./project-skill-box";
+import type { ProjectSummary } from "@/types/types";
+import Link from "next/link";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { Button } from "@/components/ui/button";
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  link: string;
+  project: ProjectSummary;
   index?: number;
 }
 
-export default function ProjectCard({
-  title,
-  description,
-  link,
-  index = 0,
-}: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   return (
     <Card index={index} className="bg-slate-800 border border-slate-700">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>{project.name}</CardTitle>
         <CardDescription className="flex gap-2 flex-wrap text-gray-300 mt-2">
-          <ProjectSkillBox skill="Next.js" />
-          <ProjectSkillBox skill="Tailwind" />
-          {/* <ProjectSkillBox skill="Shadcn UI" /> */}
+          {project.skills?.map((skill, index) => (
+            <ProjectSkillBox skill={skill} key={index} />
+          ))}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        {/* <Image src={image} alt={title} width={100} height={100} /> */}
-        <p className="prose prose-invert">{description}</p>
+        <p className="prose prose-invert">{project.description}</p>
       </CardContent>
       <CardFooter>
-        <CardAction
-          className="text-blue-300 hover:text-blue-400"
-          href={`/projects/${link.split(".")[0]}`}
-        >
-          View Project
-        </CardAction>
+        <div className="flex justify-between w-full">
+          <CardAction
+            className="text-blue-300 hover:text-blue-400"
+            href={`/projects/${project.name}`}
+          >
+            Learn More
+          </CardAction>
+
+          <Link href={project.link ?? ""}>
+            <SiGithub className="w-4 h-4 text-gray-300 hover:text-gray-200" />
+          </Link>
+        </div>
       </CardFooter>
     </Card>
   );

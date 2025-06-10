@@ -1,3 +1,4 @@
+import { ProjectSummary, ProjectSummaryList } from "@/types/types";
 import { z } from "zod";
 
 class TFileSystem {
@@ -35,6 +36,24 @@ class TFileSystem {
 
         const validatedData = schema.parse(data);
         return validatedData.content;
+    }
+
+    static async getFileSummary(api: string, schema: z.ZodSchema): Promise<ProjectSummaryList | null> {
+        const response = await fetch(api, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            return null;
+        }
+
+        const validatedData = schema.parse(data);
+        return validatedData;
     }
 }
 

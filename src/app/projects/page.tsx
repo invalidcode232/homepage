@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TFileSystem from "@/lib/fs-api/fs-api";
 import { ProjectGrid, ProjectSkeleton } from "@/components/modules/projects";
-import { ProjectListSchema } from "@/types/types";
+import { ProjectSummaryListSchema, ProjectSummarySchema } from "@/types/types";
+import type { ProjectSummary } from "@/types/types";
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<string[]>([]);
+  const [projects, setProjects] = useState<ProjectSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,9 +17,10 @@ export default function ProjectsPage() {
       try {
         setLoading(true);
         setError(null);
-        const projectList = await TFileSystem.getFileList(
-          "/api/projects/list",
-          ProjectListSchema
+
+        const projectList = await TFileSystem.getFileSummary(
+          "/api/projects/summary",
+          ProjectSummaryListSchema
         );
 
         if (projectList) {

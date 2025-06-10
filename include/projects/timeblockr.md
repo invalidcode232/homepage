@@ -1,3 +1,10 @@
+---
+name: timeblockr
+description: AI-assisted time management assistant
+skills: ["Node.js", "LLM"]
+link: https://github.com/invalidcode232/arang
+---
+
 # Timeblockr
 
 ## An Intelligent AI-Powered Calendar Management System for Automated Event Scheduling and Optimization

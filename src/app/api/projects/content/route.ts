@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { readFile, access } from "fs/promises";
 import { constants } from "fs";
+import fm from "front-matter";
 import path from "path";
 
 export async function GET(request: Request) {
@@ -22,8 +23,11 @@ export async function GET(request: Request) {
         // Read file content
         const fileContent = await readFile(filePath, "utf-8");
 
+        const { attributes, body } = fm(fileContent);
+
         return NextResponse.json({
-            content: fileContent,
+            attributes: attributes,
+            content: body,
         });
     } catch (error) {
         return NextResponse.json({

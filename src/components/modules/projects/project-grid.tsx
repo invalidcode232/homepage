@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import ProjectCard from "./project-card";
+import { ProjectSummary } from "@/types/types";
 
 interface ProjectGridProps {
-  projects: string[];
+  projects: ProjectSummary[];
 }
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
@@ -26,14 +27,11 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
       animate="visible"
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6"
     >
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          title={project.slice(0, -3)}
-          description="This is a description"
-          link={project}
-        />
-      ))}
+      {projects.map(
+        (project, index) => (
+          console.log(project), (<ProjectCard key={index} project={project} />)
+        )
+      )}
     </motion.div>
   );
 }
