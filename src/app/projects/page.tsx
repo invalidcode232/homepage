@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TFileSystem from "@/lib/fs";
+import TFileSystem from "@/lib/fs-api/fs-api";
 import { ProjectGrid, ProjectSkeleton } from "@/components/modules/projects";
+import { ProjectListSchema } from "@/types/types";
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<string[]>([]);
@@ -15,7 +16,10 @@ export default function ProjectsPage() {
       try {
         setLoading(true);
         setError(null);
-        const projectList = await TFileSystem.getFileList();
+        const projectList = await TFileSystem.getFileList(
+          "/api/projects/list",
+          ProjectListSchema
+        );
 
         if (projectList) {
           setProjects(projectList);
