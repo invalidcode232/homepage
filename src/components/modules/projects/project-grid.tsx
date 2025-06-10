@@ -5,13 +5,9 @@ import ProjectCard from "./project-card";
 
 interface ProjectGridProps {
   projects: string[];
-  onProjectClick?: (projectName: string) => void;
 }
 
-export default function ProjectGrid({
-  projects,
-  onProjectClick,
-}: ProjectGridProps) {
+export default function ProjectGrid({ projects }: ProjectGridProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,14 +24,14 @@ export default function ProjectGrid({
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6"
     >
       {projects.map((project, index) => (
         <ProjectCard
           key={index}
-          projectName={project.slice(0, -3)}
-          index={index}
-          onClick={() => onProjectClick?.(project)}
+          title={project.slice(0, -3)}
+          description="This is a description"
+          link={project}
         />
       ))}
     </motion.div>
