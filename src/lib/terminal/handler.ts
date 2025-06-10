@@ -3,7 +3,8 @@ import SYSTEM_MESSAGE, {
     OutputHistory,
     OutputHistoryType,
 } from "./objects";
-import TFileSystem from "./fs";
+import TFileSystem from "../fs-api/fs-api";
+import { FileContentSchema, ProjectListSchema } from "@/types/types";
 
 export interface TerminalInput {
     command: Commands;
@@ -63,7 +64,7 @@ class TerminalHandler {
                 this.addOutput(input, SYSTEM_MESSAGE);
                 break;
             case Commands.LS:
-                const fileList = await TFileSystem.getFileList();
+                const fileList = await TFileSystem.getFileList("/api/projects/list", ProjectListSchema);
                 if (fileList) {
                     this.addOutput(
                         input,
@@ -80,7 +81,7 @@ class TerminalHandler {
                     break;
                 }
 
-                const fileContent = await TFileSystem.getFileContent(args[0]);
+                const fileContent = await TFileSystem.getFileContent("/api/projects/content", "projectName", args[0], FileContentSchema);
                 if (fileContent) {
                     this.addOutput(input, fileContent);
                 } else {
