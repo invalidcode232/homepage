@@ -4,7 +4,7 @@ import SYSTEM_MESSAGE, {
     OutputHistoryType,
 } from "./objects";
 import TFileSystem from "../fs-api/fs-api";
-import { FileContentSchema, ProjectListSchema } from "@/types/types";
+import { FileContentSchema, ProjectListSchema } from "@/lib/terminal/types";
 
 export interface TerminalInput {
     command: Commands;
