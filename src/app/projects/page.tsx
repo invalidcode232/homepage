@@ -37,10 +37,10 @@ export default function ProjectsPage() {
     fetchProjects();
   }, []);
 
-  const handleProjectClick = (projectName: string) => {
-    console.log(`Opening project: ${projectName}`);
-    // Add your project opening logic here
-  };
+  // const handleProjectClick = (projectName: string) => {
+  //   console.log(`Opening project: ${projectName}`);
+  //   // Add your project opening logic here
+  // };
 
   if (loading) {
     return <ProjectSkeleton />;
@@ -118,7 +118,8 @@ export default function ProjectsPage() {
           </motion.div>
         </div>
       ) : (
-        <ProjectGrid projects={projects} onProjectClick={handleProjectClick} />
+        // <ProjectGrid projects={projects} onProjectClick={handleProjectClick} />
+        <ProjectGrid projects={projects} />
       )}
     </div>
   );
