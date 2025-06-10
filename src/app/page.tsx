@@ -136,7 +136,7 @@ export default function Home() {
         </motion.div>
 
         <motion.span
-          className="text-gray-500 md:mx-4 md:block hidden"
+          className="text-gray-400 md:mx-4 md:block hidden"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.2 }}
