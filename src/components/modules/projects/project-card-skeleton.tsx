@@ -36,7 +36,7 @@ function ProjectSkeletonCard({ index }: ProjectSkeletonCardProps) {
 
 export default function ProjectSkeleton() {
   // Create 8 skeleton cards (2 rows of 4)
-  const skeletonCards = Array.from({ length: 8 }, (_, index) => (
+  const skeletonCards = Array.from({ length: 6 }, (_, index) => (
     <ProjectSkeletonCard key={index} index={index} />
   ));
 
@@ -47,7 +47,7 @@ export default function ProjectSkeleton() {
         <Skeleton className="h-8 w-48 bg-slate-700 mb-2" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {skeletonCards}
       </div>
     </div>
