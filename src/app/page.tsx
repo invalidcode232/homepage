@@ -64,7 +64,7 @@ export default function Home() {
       {/* Introduction Section */}
       <motion.section
         variants={itemVariants}
-        className="mb-4 lg:max-w-[75%]"
+        className="mb-4 lg:max-w-[80%]"
         aria-label="introduction"
       >
         <motion.p
