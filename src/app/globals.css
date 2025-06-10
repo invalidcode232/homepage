@@ -4,6 +4,13 @@
 
 /* @custom-variant dark (&:is(.dark *)); */
 
+@theme {
+  --color-background: #1e293b;
+  --color-foreground: #f8fafc;
+  --color-card: #1e293b;
+  --color-card-foreground: #f8fafc;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
