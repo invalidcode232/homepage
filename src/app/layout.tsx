@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`min-h-screen overflow-scroll py-10 2xl:px-72 2xl:pt-20 xl:px-20 xl:pt-16 lg:px-20 md:px-20 px-8 pt-14 flex flex-col bg-slate-900 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-screen overflow-scroll py-10 2xl:px-96 2xl:pt-20 xl:px-20 xl:pt-16 lg:px-20 md:px-20 px-8 pt-14 flex flex-col bg-slate-900 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleAnalytics gaId="G-LTNKPSTV4G" />
         <Header />
