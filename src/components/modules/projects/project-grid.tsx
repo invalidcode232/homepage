@@ -20,18 +20,23 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
     },
   };
 
+  // Calculate grid dimensions for full page coverage
+  const getGridClasses = () => {
+    // Base: 3 rows for mobile, 4 rows for larger screens
+    // This ensures cards fill the available height
+    return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full grid-rows-3 md:grid-rows-4 auto-rows-fr";
+  };
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6"
+      className={`${getGridClasses()} min-h-[calc(100vh-12rem)]`}
     >
-      {projects.map(
-        (project, index) => (
-          console.log(project), (<ProjectCard key={index} project={project} />)
-        )
-      )}
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
     </motion.div>
   );
 }

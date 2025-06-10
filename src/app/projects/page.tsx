@@ -87,10 +87,12 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-medium text-white mb-2">My Projects</h1>
+    <div className="h-screen flex flex-col">
+      <div className="p-6 pb-4">
+        <h1 className="text-2xl font-medium text-white mb-2">My Projects</h1>
+      </div>
       {projects.length === 0 ? (
-        <div className="flex items-center justify-center py-20">
+        <div className="flex-1 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,8 +122,9 @@ export default function ProjectsPage() {
           </motion.div>
         </div>
       ) : (
-        // <ProjectGrid projects={projects} onProjectClick={handleProjectClick} />
-        <ProjectGrid projects={projects} />
+        <div className="flex-1 px-6 pb-6">
+          <ProjectGrid projects={projects} />
+        </div>
       )}
     </div>
   );

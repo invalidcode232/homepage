@@ -59,12 +59,12 @@ function Card({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative group"
+      className="relative group h-full"
     >
       <div
         data-slot="card"
         className={cn(
-          "flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative overflow-hidden ",
+          "rounded-xl border py-6 shadow-sm relative overflow-hidden h-full",
           className
         )}
         {...props}
@@ -91,7 +91,10 @@ function Card({
         />
 
         {/* Content wrapper to ensure proper z-index */}
-        <div className="relative z-10 flex flex-col gap-6 h-full">
+        <div
+          className="relative z-10 h-full gap-6"
+          style={{ display: "inherit", flexDirection: "inherit" }}
+        >
           {props.children}
         </div>
       </div>
